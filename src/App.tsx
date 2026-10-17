@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import FadingVideo from './components/FadingVideo';
+import heroBg from './assets/hero-bg.jpg';
+import capabilitiesBg from './assets/capabilities-bg.jpg';
 import BlurText from './components/BlurText';
 import { ArrowUpRight, PlayIcon, ClockIcon, GlobeIcon, ImageIcon, MovieIcon, LightbulbIcon } from './components/Icons';
 
@@ -15,11 +16,14 @@ export default function App() {
     <div className="w-full">
       {/* SECTION 1: HERO */}
       <section id="home" className="relative h-screen overflow-hidden bg-black flex flex-col">
-        <FadingVideo
-          src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260619_191346_9d19d66e-86a4-47f7-8dc6-712c1788c3b2.mp4"
-          className="absolute left-1/2 top-0 -translate-x-1/2 object-cover object-top z-0 max-w-none"
-          style={{ width: '120%', height: '120%' }}
-        />
+        <div className="absolute inset-0 z-0">
+          <img
+            src={heroBg}
+            alt="Hero Background"
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/85" />
+        </div>
 
         <div className="relative z-10 flex flex-col h-full">
           {/* Navbar (Home, Projects, About, Contact) */}
@@ -117,10 +121,14 @@ export default function App() {
 
       {/* SECTION 2: CAPABILITIES */}
       <section id="projects" className="relative min-h-screen overflow-hidden bg-black flex flex-col">
-        <FadingVideo
-          src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260622_093722_ccfc7ebf-182f-419f-8a62-2dc02db7dd9d.mp4"
-          className="absolute inset-0 w-full h-full object-cover z-0"
-        />
+        <div className="absolute inset-0 z-0">
+          <img
+            src={capabilitiesBg}
+            alt="Capabilities Background"
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/70 to-black/95" />
+        </div>
 
         <div className="relative z-10 px-8 md:px-16 lg:px-20 pt-24 pb-10 flex flex-col min-h-screen">
           <div className="mb-auto">
